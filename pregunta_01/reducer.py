@@ -25,21 +25,21 @@ import sys
 
 if __name__ == '__main__':
 
-    llave_actual = None
+    curkey = None
     total = 0
 
     for line in sys.stdin:
 
-        llave, valor = line.split("\t")
-        valor = int(valor)
+        key, value = line.split("\t")
+        value = int(value)
 
-        if llave == llave_actual:
-            total += valor
+        if key == curkey:
+            total += value
         else:
-            if llave_actual is not None:
-                sys.stdout.write("{}\t{}\n".format(llave_actual, total))
+            if curkey is not None:
+                sys.stdout.write("{}\t{}\n".format(curkey, total))
 
-            llave_actual = llave
-            total = valor
+            curkey = key
+            total = value
 
-    sys.stdout.write("{}\t{}\n".format(llave_actual, total))
+    sys.stdout.write("{}\t{}\n".format(curkey, total))

@@ -6,6 +6,6 @@ if __name__ == "__main__":
 
   for line in sys.stdin:
 
-    letter, date, num = line.strip().split()
+    letter, _, _ = line.strip().split()
 
-    print ("{}\t{}\t{}".format(date, letter, num))
+    print ("{}\t1".format(letter))
